@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:idea_slot/Screens/drawer.dart';
+import 'package:idea_slot/Screens/navigation_drawer.dart';
 
 class CategoryScreen extends StatelessWidget {
   @override

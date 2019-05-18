@@ -18,12 +18,16 @@ class NavigationDrawer extends StatelessWidget {
       child: ListView(
         children: <Widget>[
           UserAccountsDrawerHeader(
-            accountName: Text("Tesshu") ,
+            accountName: Text("Tesshu"),
             accountEmail: Text("ito1002jp@gmail.com"),
             currentAccountPicture: GestureDetector(
               child: CircleAvatar(
                 backgroundColor: Colors.grey,
-                child: Icon(Icons.person, color: Colors.white, size: 35.0,),
+                child: Icon(
+                  Icons.person,
+                  color: Colors.white,
+                  size: 35.0,
+                ),
               ),
             ),
           ),
