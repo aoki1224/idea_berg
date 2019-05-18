@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:idea_slot/Screens/navigation_drawer.dart';
-import 'package:idea_slot/Widgets/add_word.dart';
 import 'package:idea_slot/Widgets/word_card.dart';
 
-class WordScreen extends StatelessWidget {
+class EachCategoryScreen extends StatelessWidget {
+  final String category;
+
+  const EachCategoryScreen({Key key, this.category}) : 
+    assert(category != null),
+    super(key: key);
+
   static const _wordNames = <String>[
     "word1",
     "word2",
@@ -30,30 +34,20 @@ class WordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final words = <WordCard>[];
+    
     for (var i = 0; i < _wordNames.length; i++) {
       words.add(WordCard(
         word: _wordNames[i],
         category: _categoryNames[i],
       ));
     }
-
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Word"),
-        ),
-        drawer: NavigationDrawer(),
-        body: Padding(
-          padding: EdgeInsets.only(top: 10.0),
-          child: Column( 
-            children: <Widget>[
-                AddWord(),
-                Container(
-                  height: 500.0,
-                  child: _buildWordWidgets(words)
-                  ),
-            ],
-          ),
-        ),
-    );
+      appBar: AppBar(
+        title: Text(category),
+      ),
+      body: Padding(
+        padding: EdgeInsets.only(top: 10.0),
+        child: _buildWordWidgets(words))
+      );
   }
 }

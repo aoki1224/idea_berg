@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:idea_slot/Widgets/category_dropdown.dart';
 
-class Word extends StatelessWidget {
+class WordCard extends StatelessWidget {
   final String word;
   final String category;
 
-  const Word({Key key, this.word, this.category}) : 
+  const WordCard({Key key, this.word, this.category}) : 
       assert(word != null),
       assert(category != null),
       super(key: key);
